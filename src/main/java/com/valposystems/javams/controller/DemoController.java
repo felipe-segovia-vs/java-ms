@@ -21,4 +21,9 @@ public class DemoController {
         return "Hello from test";
     }
 
+    @RequestMapping(value = "test2")
+    public String test2(){
+        return "Hello from test2";
+    }
+
 }
