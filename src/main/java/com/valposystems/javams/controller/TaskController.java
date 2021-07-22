@@ -19,7 +19,7 @@ public class TaskController {
     @Autowired
     TaskRepository repository;
 
-    @GetMapping("/task/{id}")
+    @GetMapping("/tasks/{id}")
     public ResponseEntity<Task> getTask(@PathVariable("id") Long id){
         Optional<Task> task = repository.findById(id);
         if (!task.isPresent()){
@@ -32,13 +32,13 @@ public class TaskController {
 
     }
 
-    @PostMapping("/task")
+    @PostMapping("/tasks")
     public void saveTask(@RequestBody Task task){
         log.info("SAVE TASK: {}",task);
         repository.save(task);
     }
 
-    @DeleteMapping("/task/{id}")
+    @DeleteMapping("/tasks/{id}")
     public void deleteTask(@PathVariable("id") Long id){
         log.info("DELETE TASK: {}",id);
         repository.deleteById(id);
