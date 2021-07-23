@@ -43,4 +43,9 @@ public class TaskController {
         log.info("DELETE TASK: {}",id);
         repository.deleteById(id);
     }
+
+    @GetMapping("/")
+    public String hello(){
+        return "<h1>Hello from Microservice</h1>";
+    }
 }
